@@ -1,0 +1,326 @@
+Name:                     hello-minikube
+Namespace:                default
+Labels:                   app=hello-minikube
+Annotations:              <none>
+Selector:                 app=hello-minikube
+Type:                     NodePort
+IP Families:              <none>
+IP:                       10.100.0.221
+IPs:                      <none>
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  30332/TCP
+Endpoints:                172.17.0.4:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.96.0.1
+IPs:               <none>
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         192.168.49.2:8443
+Session Affinity:  None
+Events:            <none>
+Name:         hello-minikube-6ddfcc9757-cgvnb
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Mon, 11 Jan 2021 11:21:01 -0500
+Labels:       app=hello-minikube
+              pod-template-hash=6ddfcc9757
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.4
+IPs:
+  IP:           172.17.0.4
+Controlled By:  ReplicaSet/hello-minikube-6ddfcc9757
+Containers:
+  echoserver:
+    Container ID:   docker://df8d3576d0097056028673954d6f1c94608ef2ebf3a4f4329e5660123624d406
+    Image:          k8s.gcr.io/echoserver:1.4
+    Image ID:       docker-pullable://k8s.gcr.io/echoserver@sha256:5d99aa1120524c801bc8c1a7077e8f5ec122ba16b6dda1a5d3826057f67b9bcb
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Mon, 18 Jan 2021 18:10:19 -0500
+    Ready:          True
+    Restart Count:  2
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-fgrjk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-fgrjk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-fgrjk
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason          Age   From     Message
+  ----    ------          ----  ----     -------
+  Normal  SandboxChanged  33m   kubelet  Pod sandbox changed, it will be killed and re-created.
+  Normal  Pulled          32m   kubelet  Container image "k8s.gcr.io/echoserver:1.4" already present on machine
+  Normal  Created         32m   kubelet  Created container echoserver
+  Normal  Started         32m   kubelet  Started container echoserver
+
+
+Name:         sba-flaskappdeploy-d8c887957-cg2ds
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Mon, 18 Jan 2021 18:29:29 -0500
+Labels:       app=sbaflaskapp
+              pod-template-hash=d8c887957
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.8
+IPs:
+  IP:           172.17.0.8
+Controlled By:  ReplicaSet/sba-flaskappdeploy-d8c887957
+Containers:
+  sba-kubernetes:
+    Container ID:   docker://52c5a819f4b4f42bc5ccdb063bdc83480dfe379dba3864460cc0d53364da1cc1
+    Image:          mikehj24/sba
+    Image ID:       docker-pullable://mikehj24/sba@sha256:970690b916ed90a4c937c7d2a23d8de5d42cccf663442c18b4327b2e9a2d5d45
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Mon, 18 Jan 2021 18:29:52 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-fgrjk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-fgrjk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-fgrjk
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  13m   default-scheduler  Successfully assigned default/sba-flaskappdeploy-d8c887957-cg2ds to minikube
+  Normal  Pulling    13m   kubelet            Pulling image "mikehj24/sba"
+  Normal  Pulled     13m   kubelet            Successfully pulled image "mikehj24/sba" in 13.9707302s
+  Normal  Created    13m   kubelet            Created container sba-kubernetes
+  Normal  Started    13m   kubelet            Started container sba-kubernetes
+
+
+Name:         sba-flaskappdeploy-d8c887957-qjk4k
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Mon, 18 Jan 2021 18:29:29 -0500
+Labels:       app=sbaflaskapp
+              pod-template-hash=d8c887957
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.7
+IPs:
+  IP:           172.17.0.7
+Controlled By:  ReplicaSet/sba-flaskappdeploy-d8c887957
+Containers:
+  sba-kubernetes:
+    Container ID:   docker://2834394f93e47b6ac432ec9e79d079c495c2a73d0d2e4d4fda82e7672c5b0e24
+    Image:          mikehj24/sba
+    Image ID:       docker-pullable://mikehj24/sba@sha256:970690b916ed90a4c937c7d2a23d8de5d42cccf663442c18b4327b2e9a2d5d45
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Mon, 18 Jan 2021 18:29:52 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-fgrjk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-fgrjk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-fgrjk
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  13m   default-scheduler  Successfully assigned default/sba-flaskappdeploy-d8c887957-qjk4k to minikube
+  Normal  Pulling    13m   kubelet            Pulling image "mikehj24/sba"
+  Normal  Pulled     13m   kubelet            Successfully pulled image "mikehj24/sba" in 13.5447733s
+  Normal  Created    13m   kubelet            Created container sba-kubernetes
+  Normal  Started    13m   kubelet            Started container sba-kubernetes
+
+
+Name:         sba-flaskappdeploy-d8c887957-xz79n
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Mon, 18 Jan 2021 18:29:29 -0500
+Labels:       app=sbaflaskapp
+              pod-template-hash=d8c887957
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.6
+IPs:
+  IP:           172.17.0.6
+Controlled By:  ReplicaSet/sba-flaskappdeploy-d8c887957
+Containers:
+  sba-kubernetes:
+    Container ID:   docker://0faf888af41b5b9ac4cc0abdbdc6b057b84864a0f0eeaa6e77216c8c3ccbccb0
+    Image:          mikehj24/sba
+    Image ID:       docker-pullable://mikehj24/sba@sha256:970690b916ed90a4c937c7d2a23d8de5d42cccf663442c18b4327b2e9a2d5d45
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Mon, 18 Jan 2021 18:29:52 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-fgrjk (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-fgrjk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-fgrjk
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  13m   default-scheduler  Successfully assigned default/sba-flaskappdeploy-d8c887957-xz79n to minikube
+  Normal  Pulling    13m   kubelet            Pulling image "mikehj24/sba"
+  Normal  Pulled     13m   kubelet            Successfully pulled image "mikehj24/sba" in 13.1733955s
+  Normal  Created    13m   kubelet            Created container sba-kubernetes
+  Normal  Started    13m   kubelet            Started container sba-kubernetes
+Name:               minikube
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=minikube
+                    kubernetes.io/os=linux
+                    minikube.k8s.io/commit=23f40a012abb52eff365ff99a709501a61ac5876
+                    minikube.k8s.io/name=minikube
+                    minikube.k8s.io/updated_at=2021_01_11T11_07_06_0700
+                    minikube.k8s.io/version=v1.15.1
+                    node-role.kubernetes.io/master=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 11 Jan 2021 11:06:34 -0500
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  minikube
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 18 Jan 2021 18:42:58 -0500
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 18 Jan 2021 18:40:15 -0500   Mon, 11 Jan 2021 11:06:32 -0500   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 18 Jan 2021 18:40:15 -0500   Mon, 11 Jan 2021 11:06:32 -0500   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 18 Jan 2021 18:40:15 -0500   Mon, 11 Jan 2021 11:06:32 -0500   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 18 Jan 2021 18:40:15 -0500   Mon, 11 Jan 2021 11:06:46 -0500   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.49.2
+  Hostname:    minikube
+Capacity:
+  cpu:                4
+  ephemeral-storage:  263174212Ki
+  hugepages-2Mi:      0
+  memory:             4794384Ki
+  pods:               110
+Allocatable:
+  cpu:                4
+  ephemeral-storage:  263174212Ki
+  hugepages-2Mi:      0
+  memory:             4794384Ki
+  pods:               110
+System Info:
+  Machine ID:                 126f62e4b81d458fa8e786a09a22c822
+  System UUID:                126f62e4b81d458fa8e786a09a22c822
+  Boot ID:                    3bcfe982-335c-4f79-aba7-dde73e204473
+  Kernel Version:             4.19.128-microsoft-standard
+  OS Image:                   Ubuntu 20.04.1 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://19.3.13
+  Kubelet Version:            v1.19.4
+  Kube-Proxy Version:         v1.19.4
+Non-terminated Pods:          (13 in total)
+  Namespace                   Name                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                         ------------  ----------  ---------------  -------------  ---
+  default                     hello-minikube-6ddfcc9757-cgvnb              0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d7h
+  default                     sba-flaskappdeploy-d8c887957-cg2ds           0 (0%)        0 (0%)      0 (0%)           0 (0%)         13m
+  default                     sba-flaskappdeploy-d8c887957-qjk4k           0 (0%)        0 (0%)      0 (0%)           0 (0%)         13m
+  default                     sba-flaskappdeploy-d8c887957-xz79n           0 (0%)        0 (0%)      0 (0%)           0 (0%)         13m
+  kube-system                 coredns-f9fd979d6-nhc7c                      100m (2%)     0 (0%)      70Mi (1%)        170Mi (3%)     7d7h
+  kube-system                 etcd-minikube                                0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d7h
+  kube-system                 kube-apiserver-minikube                      250m (6%)     0 (0%)      0 (0%)           0 (0%)         7d7h
+  kube-system                 kube-controller-manager-minikube             200m (5%)     0 (0%)      0 (0%)           0 (0%)         7d7h
+  kube-system                 kube-proxy-zdltk                             0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d7h
+  kube-system                 kube-scheduler-minikube                      100m (2%)     0 (0%)      0 (0%)           0 (0%)         7d7h
+  kube-system                 storage-provisioner                          0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d7h
+  kubernetes-dashboard        dashboard-metrics-scraper-c95fcf479-rxwr4    0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d7h
+  kubernetes-dashboard        kubernetes-dashboard-584f46694c-ntklz        0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d7h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                650m (16%)  0 (0%)
+  memory             70Mi (1%)   170Mi (3%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:
+  Type    Reason                   Age                From        Message
+  ----    ------                   ----               ----        -------
+  Normal  Starting                 34m                kubelet     Starting kubelet.
+  Normal  NodeAllocatableEnforced  34m                kubelet     Updated Node Allocatable limit across pods
+  Normal  NodeHasSufficientMemory  34m (x8 over 34m)  kubelet     Node minikube status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    34m (x8 over 34m)  kubelet     Node minikube status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     34m (x7 over 34m)  kubelet     Node minikube status is now: NodeHasSufficientPID
+  Normal  Starting                 32m                kube-proxy  Starting kube-proxy.
